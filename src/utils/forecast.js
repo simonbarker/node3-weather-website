@@ -9,7 +9,8 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback(body.error)
         } else {
-            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees out. There is a ${body.currently.precipProbability}% chance of rain.`)
+            console.log(body)
+            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees out with wind gusting to ${body.currently.windGust} mph from a speed of ${body.currently.windSpeed} mph. There is a ${body.currently.precipProbability}% chance of rain.`)
         }
 
     })
